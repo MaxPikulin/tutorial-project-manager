@@ -1,12 +1,12 @@
 import React from 'react';
 import ProjectSummary from './ProjectSummary';
 
-const ProjectList = (props) => {
+const ProjectList = ({ projects }) => {
   return (
     <div className="project-list section">
-    {['', '', '', ''].map((project, i) => {
-      return <ProjectSummary data={project} key={i} />
-    })}
+      {projects && projects.map(project => {
+        return <ProjectSummary project={project} key={project.id} />
+      })}
     </div>
   );
 };
